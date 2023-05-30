@@ -10,6 +10,14 @@ public class Member {
 	private Long Id;
 	private String name;
 
+	public Member() {
+	}
+
+	public Member(Long id, String name) {
+		this.Id = id;
+		this.name = name;
+	}
+
 	public void setId(Long id) {
 		Id = id;
 	}

@@ -31,12 +31,32 @@ public class JpaMain {
 //			findMember.setName("HelloJPA");         // 수정
 
 			// JPQL
-			List<Member> result = em.createQuery("select m from Member as m", Member.class)
-					.getResultList();
-			for (Member member : result) {
-				System.out.println("member.getName() = " + member.getName());
-			}
+//			List<Member> result = em.createQuery("select m from Member as m", Member.class)
+//					.getResultList();
+//			for (Member member : result) {
+//				System.out.println("member.getName() = " + member.getName());
+//			}
 
+//			// 비영속
+//			Member member = new Member();
+//			member.setId(101L);
+//			member.setName("HelloJPA");
+
+			// 영속
+//			em.persist(member);
+
+//			Member findMember1 = em.find(Member.class, 101L);
+//			Member findMember2 = em.find(Member.class, 101L);
+//
+//			System.out.println("result = " + (findMember1 == findMember2));
+//			System.out.println("findMember.getId() = " + findMember1.getId());
+//			System.out.println("findMember.getName() = " + findMember1.getName());
+
+			Member member = new Member(200L, "member200");
+			em.persist(member);
+
+
+			System.out.println("=================");
 			tx.commit();
 		} catch (Exception e) {
 			tx.rollback();
